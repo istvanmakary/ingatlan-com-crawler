@@ -1,0 +1,13 @@
+[Unit]
+Description=Node.js HomeKit Server
+After=syslog.target network-online.target
+
+[Service]
+User=pi
+ExecStart=/home/pi/.nvm/versions/node/v14.12.0/bin/node /home/pi/ingatlan.com-crawler/dist/crawler.js
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
